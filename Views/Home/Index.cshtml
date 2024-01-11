@@ -1,0 +1,43 @@
+﻿@model TagHelpers.Models.Human
+
+@{
+    // Set the title of the page
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <!-- Display a heading with a larger font size -->
+    <h1 class="display-4">Welcome</h1>
+
+    <!-- Display validation summary at the top for all validation errors -->
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <!-- Use asp-for with specific model properties for automatic model binding -->
+    <div>
+        <label>Name:</label>
+        <!-- Use Tag Helper to generate an input element for the 'Name' property -->
+        <input asp-for="Name" />
+        <!-- Display validation error message for the 'Name' property -->
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Age:</label>
+        <!-- Use Tag Helper to generate an input element for the 'Age' property -->
+        <input asp-for="Age" />
+        <!-- Display validation error message for the 'Age' property -->
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Is Handsome:</label>
+        <!-- Use Tag Helper to generate a checkbox for the 'Handsome' property -->
+        <input asp-for="Handsome" />
+        <!-- Display validation error message for the 'Handsome' property -->
+        <span asp-validation-for="Handsome" class="text-danger"></span>
+    </div>
+
+    <!-- Button to submit the form -->
+    <button type="submit">Submit</button>
+
+</div>
